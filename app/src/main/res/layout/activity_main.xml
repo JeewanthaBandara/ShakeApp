@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        android:layout_height="65dp">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:elevation="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:title="Flash Up"
+            app:navigationIcon="@drawable/ic_baseline_menu_24"
+            app:titleTextAppearance="@style/Toolbar.TitleText"
+            android:background="@drawable/appbar"
+            app:menu="@menu/menu"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/good"
+        android:layout_below="@+id/action_bar"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Good"
+        android:textStyle="bold"
+        android:textSize="35sp"/>
+
+    <TextView
+        android:id="@+id/morning"
+        android:layout_below="@+id/action_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@+id/good"
+        android:text="Morning,"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/user"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User"
+        android:textSize="23sp"/>
+
+
+    <com.skyfishjy.library.RippleBackground
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content"
+        app:rb_color="@color/colorPrimaryDark"
+        app:rb_radius="32dp"
+        app:rb_rippleAmount="4"
+        app:rb_duration="3000"
+        app:rb_scale="6">
+    </com.skyfishjy.library.RippleBackground>
+
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/shadow"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_width="wrap_content"
+        android:src="@drawable/shadow"
+        android:layout_height="320dp">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="320dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="75dp"
+        android:src="@drawable/power"/>
+
+    <LinearLayout
+        android:layout_below="@+id/button"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/torch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="4dp"
+            app:srcCompat="@drawable/ic_baseline_highlight_24"
+            app:tint="@color/colorPrimaryDark"
+            app:backgroundTint="@android:color/white"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/sound"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="35dp"
+            app:elevation="4dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_baseline_wifi_24"
+            app:tint="@color/colorPrimaryDark"
+            app:backgroundTint="@android:color/white"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            app:elevation="4dp"
+            app:srcCompat="@drawable/ic_baseline_music_note_24"
+            app:tint="@color/colorPrimaryDark"
+            app:backgroundTint="@android:color/white"/>
+    </LinearLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/bottom_sheet"/>
+        <include layout="@layout/bottom_setting"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>

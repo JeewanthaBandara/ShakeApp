@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Flash Up</string>
+    <string name="shake">Shake mode enable</string>
+    <string name="shakeOff">Shake mode disable</string>
+    <string name="torch">Shake to toggle flashlight</string>
+    <string name="phone">Shake to toggle wifi</string>
+    <string name="music">Shake to play music</string>
+    <string name="seclect">Select music</string>
+</resources>
